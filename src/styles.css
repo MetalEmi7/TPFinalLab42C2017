@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.sinEspacio-inferior
+{
+    margin-bottom: 0;
+}
+
+.carouselImage
+{
+    height: 450px;
+    image-rendering: auto;
+}
+
+.imagenUno
+{
+    background-image: url("/assets/imagenes/1.jpg");
+}
+
+.centrarEnContainer
+{
+    flex-grow: 0;
+}
+
+.padding
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}

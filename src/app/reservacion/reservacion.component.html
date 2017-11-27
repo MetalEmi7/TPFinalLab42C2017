@@ -1,0 +1,427 @@
+<div class="container">
+  <form class = "alert alert-secondary" enctype="multipart/form-data">
+    <h2 class="alert alert-primary">Datos personales / Contacto</h2>
+
+    <div class="row">
+      <div class="form-group col-12">
+          <label><b>Nombre</b></label>
+          <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.nombre" >
+      </div>
+
+      <div class="form-group col-12">
+        <label><b>Apellido</b></label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.apellido" >
+      </div>
+
+
+
+      <div class="form-group col-12">
+        <label><b>Correo</b></label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.apellido" >
+      </div>
+
+      <div class="form-group col-12">
+        <label><b>Telefono</b></label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.apellido" >
+      </div>
+    </div>
+
+
+
+
+<hr>
+<h2 class="alert alert-primary">Datos de la reservacion</h2>
+
+
+
+
+<div class="row"><!-- div...row -->
+  <div class="form-group col-4"><!-- div...form -->
+      <label><b>Lugar donde desee hacer el evento.</b></label>
+      <input type="text" disabled="true" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.nombre" >
+      <br>
+
+      <label><b>Fecha y Hora</b></label>
+      <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.apellido" >
+      <label><b>Fecha y Hora</b></label>      
+      <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.apellido" >     
+  </div>
+
+
+
+  <div class="form-group col-8">
+      <label><b>Haga click en uno de los locales donde quiere hacer dicho evento</b></label>
+
+    <div class="alert bg-dark">      
+    <div class="container">
+      <agm-map class="rounded-0" 
+      [zoom]="13" 
+      [zoomControl]="false"
+      [latitude]="lat" 
+      [longitude]="lng" 
+      [fullscreenControl]="true"
+      (mapClick)="mapClickeado($event)">
+      
+          <agm-marker
+          *ngFor="let m of locales; let i = index"
+          (markerClick)="marcadorCliqueado(m, i)"
+          [latitude]="m.lati"
+          [longitude]="m.longi"
+          [markerDraggable]="m.arrastrable"
+          (dragEnd)="posicionFinalMarcado(m, $event)">
+          
+          <agm-info-window>
+            <strong>{{m.nombre}}
+              <p> {{m.detalles}} </p>
+            </strong>
+          </agm-info-window>
+
+          </agm-marker>
+
+      </agm-map>
+    </div>
+    </div>
+  </div><!-- Cierre div...form -->
+</div><!-- Cierre div...row -->
+
+
+
+
+<hr>
+<h2 class="alert alert-primary">Evento, Mesas e Invitados</h2>
+
+
+
+
+
+    <label><b>Haga click en el evento deseado.</b></label>
+    <div class="form-group">
+        <button class="btn btn-danger"> Casamiento </button>
+        <button class="btn btn-warning"> Cumpleaños </button>
+        <button class="btn btn-success"> Evento x </button>  
+    </div>
+
+    <label><b>Agregue un invitado y asignele una mesa.</b></label>
+    <div class="form-group">
+      <button class="form-control btn btn-success"> Agregar Invitado </button>  
+    </div>
+  
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+
+        <img class="card-img-top" src="assets/imagenes/1.jpg" alt="Card image cap">
+
+
+        <div class="card-body">
+            <h3 class="card-title">Mesa: {{mesaDisponible_Uno}} </h3>
+            <p class="card-text"></p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+        </ul>
+
+  </div>
+</div>
+
+
+
+
+  <div class="col">
+      <div class="card">
+  
+          <img class="card-img-top" src="assets/imagenes/1.jpg" alt="Card image cap">
+  
+  
+          <div class="card-body">
+              <h3 class="card-title">Mesa: {{mesaDisponible_Dos}} </h3>
+              <p class="card-text"></p>
+          </div>
+  
+          <ul class="list-group list-group-flush">
+          </ul>
+  
+      </div>
+  </div>
+
+
+
+
+    <div class="col">
+        <div class="card">
+    
+            <img class="card-img-top" src="assets/imagenes/1.jpg" alt="Card image cap">
+    
+    
+            <div class="card-body">
+                <h3 class="card-title">Mesa: {{mesaDisponible_Tres}} </h3>
+                <p class="card-text"></p>
+            </div>
+    
+            <ul class="list-group list-group-flush">
+            </ul>
+    
+        </div>
+    </div>
+</div>
+
+
+
+
+<hr>
+<h2 class="alert alert-primary">Servicio de comida</h2>
+            
+
+
+
+<div class="row">
+  <div class="col">
+    <!-- click en cards para selecionar comida, cambiar stylo de card... usar directivas en lo posible -->
+
+                <div class="card alert-danger">
+                  <img class="card-img-top" src="assets/imagenes/3.jpg" alt="Card image cap">
+                  <div class="card-body ">
+                    <h4 class="card-title">Comida Gourmet</h4>
+                    <p class="card-text">Los alimentos gourmet son aquellas preparaciones que han sido elaborados con ingredientes exquisitamente seleccionados, con exhaustivos cuidados de higiene y de las propiedades organolépticas.</p>
+                    </div>
+                </div>
+  </div> 
+
+  <div class="col">
+                <div class="card alert-warning">
+                  <img class="card-img-top" src="assets/imagenes/3.jpg" alt="Card image cap">
+                  <div class="card-body ">
+                    <h4 class="card-title">Comida no Gourmet</h4>
+                    <p class="card-text">Los alimentos no gourmet son los mas comunes y cotidianos de preparacion simple, rapida y rica. </p>
+                  </div>
+                </div>
+  </div>    
+
+  <div class="col">              
+                <div class="card alert-success">
+                  <img class="card-img-top" src="assets/imagenes/3.jpg" alt="Card image cap">
+                  <div class="card-body ">
+                    <h4 class="card-title">Comida Saludable</h4>
+                    <p class="card-text">Consiste en preparaciones de una variedad de alimentos que te brinden los nutrientes que necesitas para mantenerte sana, sentirte bien y tener energía. Estos nutrientes incluyen las proteínas, los carbohidratos, las grasas, el agua, las vitaminas y los minerales.</p>
+                    
+                  </div>
+                </div>
+  </div>    
+</div>
+
+
+
+<hr>
+<h2 class="alert alert-primary">Importe total y Forma de pago</h2>
+
+
+
+<div class="row">
+    <form class="form-group col-12">
+
+        <div class="clearfix">
+            <h4><b>Evento, Invitados y Mesas</b></h4><hr>
+          <div class="col">
+
+            <div class="float-left">
+              <label>{{evento}}</label> 
+            </div>
+
+            <div class="float-right">
+                <label>${{imp_evento}}</label>  
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="clearfix">
+          <div class="col">
+          
+          <div class="float-left">
+            <label>{{invitados}}</label>  
+          </div>
+
+          <div class="float-right">
+              <label>${{imp_invitados}}</label>  
+          </div>
+          
+          </div>
+        </div>
+
+
+        <div class="clearfix">
+          <div class="col">
+          
+          <div class="float-left">
+            <label>{{mesas}}</label>  
+          </div>
+
+          <div class="float-right">
+              <label>${{imp_mesas}}</label>  
+          </div>
+          
+          </div>
+        </div><br>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="clearfix">
+          <h4><b>Servicio de Comida</b></h4><hr>
+          <div class="col">
+          
+              <div class="float-left">
+                <label>{{comidaG}}</label>  
+              </div>
+      
+              <div class="float-right">
+                  <label>${{imp_comidaG}}</label>  
+              </div>
+          
+          </div>
+        </div>
+  
+    
+        <div class="clearfix">
+          <div class="col">
+          
+            <div class="float-left">
+              <label>{{comidaNoG}}</label>  
+            </div>
+
+
+            <div class="float-right">
+                <label>${{imp_comidaNoG}}</label>  
+            </div>
+          
+          </div>
+        </div>
+
+
+        <div class="clearfix">
+          <div class="col">
+          
+            <div class="float-left">
+              <label>{{comidaSaludable}}</label>  
+            </div>
+
+
+            <div class="float-right">
+                <label>${{imp_comidaSaludable}}</label>  
+            </div>
+          
+          </div>
+        </div><br>
+
+
+
+
+
+
+
+
+      <hr>
+      <div class="clearfix">
+          <div class="float-left">
+              <h4><b>Total a pagar</b></h4>  
+          </div>
+
+          <div class="float-right">
+              <h4><b>${{totalAPAgar}}</b></h4>  
+          </div>
+      </div>
+      <hr>
+
+
+
+<div class="row">
+<div class="col">
+        <div class="form-group">
+          <label class="form-check-label">
+            <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="false" (click)="tarjetaOEfectivo($event)"> Tarjeta de credito
+          </label>
+          <br>
+          <label class="form-check-label">
+              <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="true" (click)="tarjetaOEfectivo($event)" > Efectivo    
+          </label>
+        </div>  
+</div>
+</div>
+
+
+<div class="row" *ngIf="!conEfectivo">
+  <div class="col">
+        <div class="form-group">
+            <label><b>Codigo de Seguridad de la tarjeta</b></label>
+            <input type="text" class="form-control col-3" placeholder="Enter Username" name="user" [(ngModel)]="form.nombre" >
+        </div>
+  
+        <div class="row">
+        <div class="form-group col-2">
+          <label><b>Mes</b></label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Enero</option>
+            <option>Febrero</option>
+            <option>Marzo</option>
+            <option>Abril</option>
+            <option>Mayo</option>
+            <option>Junio</option>
+            <option>Julio</option>
+            <option>Agosto</option>
+            <option>Septiembre</option>
+            <option>Octubre</option>
+            <option>Noviembre</option>
+            <option>Diciembre</option>
+          </select>
+        </div>
+
+        <div class="form-group col-2">
+          <label><b>Año</b></label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+          </select>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+<div class="row" *ngIf="conEfectivo">
+  <div class="col-12">
+    <h1 class="alert alert-danger" align="center"> <strong>Paga en el lugar del evento</strong> </h1>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12">
+    <button class="form-control btn btn-success" > Registrar reservacion </button>
+  </div>
+</div>
+
+
+
+  </form>
+</div>

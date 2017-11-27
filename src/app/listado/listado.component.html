@@ -1,0 +1,72 @@
+<body>
+  <div class="container">
+
+
+
+      <div class="row ">
+          <div class="col-8">
+            <form class="alert alert-dark" >
+              
+                <div class="row">
+                  <div class="col-6">
+                    <h1 class="alert bg-dark" >Tiene {{reservaciones}} hechas</h1>
+                  </div>
+
+                </div>
+
+      <hr>
+
+            <label class="">Reservaciones mas recientes</label>
+            <div class="form-row">
+              <div class="col">
+                <!-- Listado de reservaciones -->
+              <button type="submit" class="btn btn-primary">Reserv. A00923</button>
+              <button type="submit" class="btn btn-success">Reserv. B04624</button>
+              <button type="submit" class="btn btn-success">Reserv. B04630</button>
+              </div>
+
+            </div>
+
+      <hr>
+
+            <label class="">reservas</label>
+            <div class="form-row center">
+              <div class="col-8">
+                <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="introduzca numero de reservacion">
+              </div>
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+            </div>
+
+            </form>
+          </div>
+
+
+          <div class="col-4">
+            <form class="alert alert-info" >
+
+            </form>
+          </div>
+      </div>
+
+
+
+
+      <div *ngIf="queEs" class="container alert alert-primary">
+        <ng2-smart-table [settings]="settings" [source]="ListaDeJugadores"></ng2-smart-table>
+      </div>
+          
+          
+
+
+
+
+
+
+
+
+
+
+
+  </div> <!-- Container -->
