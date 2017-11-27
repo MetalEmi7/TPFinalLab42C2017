@@ -1,72 +1,106 @@
 <body>
-  <div class="container">
+<div class="row ">
+  <div class="col-12">
+    <form class="alert alert-dark" >
+        <div class="row">
+          <div class="col-6">
+            <h3 class="" >_Tiene {{reservaciones}} reservaciones</h3>
+          </div>
+        </div>
 
-
-
-      <div class="row ">
-          <div class="col-8">
-            <form class="alert alert-dark" >
-              
-                <div class="row">
-                  <div class="col-6">
-                    <h1 class="alert bg-dark" >Tiene {{reservaciones}} hechas</h1>
-                  </div>
-
-                </div>
-
-      <hr>
-
-            <label class="">Reservaciones mas recientes</label>
-            <div class="form-row">
-              <div class="col">
+        <hr>
+        <label class="">Reservaciones mas recientes</label>
+            
+        <div class="form-row">
+          <div class="col">
                 <!-- Listado de reservaciones -->
-              <button type="submit" class="btn btn-primary">Reserv. A00923</button>
-              <button type="submit" class="btn btn-success">Reserv. B04624</button>
-              <button type="submit" class="btn btn-success">Reserv. B04630</button>
-              </div>
-
-            </div>
-
-      <hr>
-
-            <label class="">reservas</label>
-            <div class="form-row center">
-              <div class="col-8">
-                <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="introduzca numero de reservacion">
-              </div>
-              <div class="col-4">
-                <button type="submit" class="btn btn-primary">Buscar</button>
-              </div>
-            </div>
-
-            </form>
+            <button class="btn btn-primary">Reserv. A00923</button>
+            <button class="btn btn-success">Reserv. B04624</button>
+            <button class="btn btn-success">Reserv. B04630</button>
           </div>
-
-
+        </div>        
+        
+        <hr>
+          
+        <div class="row">
           <div class="col-4">
-            <form class="alert alert-info" >
-
-            </form>
+            <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Buscar reservacion por ID">
+            </div>
+            <div class="col">
+            <button class="btn btn-dark">Buscar</button>
           </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+
+  <div class="row">
+    <div class="col-12">
+      <form class="alert alert-info">
+        <div class="clearfix">
+  
+              <div class="float-left">
+                <h4> Evento: {{id_evento}} </h4>
+              </div>
+  
+              <div class="float-right">
+                <button class="btn btn-info ">Modificar Evento</button>
+                <button class="btn btn-info ">Eliminar Evento</button>
+              </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+    <div class="row">
+      <div class="col-12">
+        <form action="" class="alert alert-dark">
+
+            <h4> Mesa: {{n}}</h4>
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Accion</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td> <button class="btn btn-info btn-sm">Quitar</button> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td> <button class="btn btn-info btn-sm">Quitar</button> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Jacob</td>
+                    <td> Apellido </td>
+                    <td> <button class="btn btn-info btn-sm">Quitar</button> </td>
+                  </tr>
+   
+                </tbody>
+
+              </table>
+        </form>
       </div>
-
-
-
-
-      <div *ngIf="queEs" class="container alert alert-primary">
-        <ng2-smart-table [settings]="settings" [source]="ListaDeJugadores"></ng2-smart-table>
-      </div>
-          
-          
+    </div>
 
 
 
 
 
-
-
-
-
-
-
-  </div> <!-- Container -->
+</body>

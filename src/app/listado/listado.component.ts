@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ListadoComponent implements OnInit {
   queEs:boolean=false;
 
-  settings = {
+  reservaciones:number = 0;
+
+  sets = {
     columns: {
       cuit: {
         title: 'Cuit'
