@@ -13,9 +13,16 @@ import { AltaComponent } from './alta/alta.component';
 import { ReservacionComponent } from './reservacion/reservacion.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ListadoComponent } from './listado/listado.component';
-import { ConfigMapDirective } from './config-map.directive';
+import { ConfigMapDirective } from './directivas/config-map.directive';
+import { MenuStripComponent } from './menu-strip/menu-strip.component';
+
+import { MiHttpService } from "./servicios/mi-http.service";
 
 const miRoute = [
+  {path:"", component: MainMenuComponent},
+  {path:"login", component: LoginComponent},
+  {path:"listado", component: ListadoComponent},
+  {path:"altaReservacion", component: ReservacionComponent},
   {path:"", component: MainMenuComponent},
   {path:"alta", component: AltaComponent},
   {path:"listado", component: ListadoComponent},
@@ -31,7 +38,8 @@ const miRoute = [
     ReservacionComponent,
     CatalogoComponent,
     ListadoComponent,
-    ConfigMapDirective,    
+    ConfigMapDirective,
+    MenuStripComponent,    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,9 @@ const miRoute = [
       apiKey: 'AIzaSyBsvHVlxMgFvo8Wh_O0SfdlVKDaK5kBuBA'
     })
   ],
-  providers: [],
+  providers: [
+    MiHttpService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

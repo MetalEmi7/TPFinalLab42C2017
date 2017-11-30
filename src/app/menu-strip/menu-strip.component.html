@@ -1,0 +1,25 @@
+
+
+  <div class="sticky-top">
+    <div class="alert alert-success">
+      <div class="clearfix">
+
+        <div class="float-left">
+          <a href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Simpleicons_Places_home-symbol.svg/2000px-Simpleicons_Places_home-symbol.svg.png" width="28" height="28" class="d-inline-block align-top" alt="">
+          </a>
+
+          <button class="btn btn-info btn-sm" routerLink="/altaReservacion" >Reservaciones</button>
+          <button class="btn btn-info btn-sm" routerLink="/listado" >Fiestas</button>
+          <button class="btn btn-info btn-sm" routerLink="/listado" >Gestion</button>
+        </div>
+
+        <div class="float-right">    
+          <button class="btn btn-sm btn-danger"    routerLink="/" *ngIf="Logueado"  (click)="desLoguearse()" > Log out          </button>
+          <button class="btn btn-sm btn-secondary" routerLink="/login" *ngIf="!Logueado" >                          Login            </button>
+          <button class="btn btn-success btn-sm"   routerLink="/" >                                            Usuario logueado </button> 
+        <div>
+
+      </div>
+    </div>
+  </div>

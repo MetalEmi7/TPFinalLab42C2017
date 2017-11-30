@@ -8,10 +8,10 @@ apellido:string;
 edad:number;
 sexo:string;
 
-password:string;
 mail:string;
+password:string;
 
-fechaRegistro:string
+fecha_registro:string
 
 
 
